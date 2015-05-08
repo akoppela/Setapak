@@ -1,0 +1,64 @@
+---
+---
+
+@import "extras"
+@import "colors"
+
+/* fonts
+
+@font-face
+  :font-family "BlairMdITC TT"
+  :font-style normal
+  :font-weight normal
+  :src local("BlairMdITC TT") , url({{"/assets/fonts/blairmditc-tt-medium.eot" | prepend: site.baseurl}}) format("oet"), local("BlairMdITC TT"), url({{"/assets/fonts/blairmditc-tt-medium.woff" | prepend: site.baseurl}}) format("woff"), local("BlairMdITC TT"), url({{"/assets/fonts/blairmditc-tt-medium.ttf" | prepend: site.baseurl}}) format("truetype"), url({{"/assets/fonts/blairmditc-tt-medium.svg" | prepend: site.baseurl}}) format('svg')
+
+$base: 1.25em
+$baseline: 1rem
+
+$ninesixty_gutter_width: $baseline / 2
+$ninesixty_grid_width: 100%
+$ninesixty_columns: 8
+
+$min_width: 90%
+$max_width: $ninesixty_gutter_width * 140
+$free_space: (100% - $min_width) / 2
+
+html
+  :position relative
+  :min-height 100%
+  :height 100%
+  :font
+    :size $base
+    :family "BlairMdITC TT", sans-serif
+  :letter-spacing 1px
+  +background-size(contain)
+  
+html, html a
+  +colors(#650f7a, 0 1px 2px rgba(255, 255, 255, 0.75))
+
+*
+  +children-list-fix
+
+*, *:before, *:after
+  :outline none
+  +box-sizing
+  +transition(opacity .3s ease-in-out)
+
+$header: $baseline * 2
+$footer: $baseline * 2
+
+body
+  :font
+    :family "BlairMdITC TT", sans-serif
+    :size $baseline
+  :height 100%
+  :min-height 100%
+  +text-shadow(inset 0 -2px 0 rgba(255, 255, 255, 0.5))
+
+#container
+  :line-height $baseline
+  :height 100%
+  :min-height $baseline * 29
+  +grid-container
+  :background $white url("{{ "/assets/images/backgrounds/main.jpg" | prepend: site.baseurl }}") no-repeat center
+  +background-size(contain)
